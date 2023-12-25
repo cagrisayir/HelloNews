@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Response {
+struct Response: Decodable {
     var status: String
-    var totalResult: Int
+    var totalResult: Int?
     var articles: [Article]
 }

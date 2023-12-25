@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var news = [Article]()
+    var dataService = DataService()
     var body: some View {
-        SingleNewsView()
+        List(news, id: \.title) { artic in
+            Text(artic.title ?? "NEWS")
+        }
+        .task {
+            news = await dataService.apiCall()
+        }
     }
 }
 
