@@ -15,6 +15,7 @@
 		06C49DB32B39FB860017B66A /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C49DB22B39FB860017B66A /* Article.swift */; };
 		06C49DB82B39FF8E0017B66A /* SingleNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C49DB72B39FF8E0017B66A /* SingleNewsView.swift */; };
 		06C49DBC2B3A00FC0017B66A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C49DBB2B3A00FC0017B66A /* DataService.swift */; };
+		06C49DBE2B3A11F50017B66A /* NewsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C49DBD2B3A11F50017B66A /* NewsCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		06C49DB22B39FB860017B66A /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		06C49DB72B39FF8E0017B66A /* SingleNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleNewsView.swift; sourceTree = "<group>"; };
 		06C49DBB2B3A00FC0017B66A /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		06C49DBD2B3A11F50017B66A /* NewsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				06C49DB72B39FF8E0017B66A /* SingleNewsView.swift */,
+				06C49DBD2B3A11F50017B66A /* NewsCard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			files = (
 				06C49DB32B39FB860017B66A /* Article.swift in Sources */,
 				06C49DA32B39F8390017B66A /* ContentView.swift in Sources */,
+				06C49DBE2B3A11F50017B66A /* NewsCard.swift in Sources */,
 				06C49DB12B39FB390017B66A /* Response.swift in Sources */,
 				06C49DBC2B3A00FC0017B66A /* DataService.swift in Sources */,
 				06C49DA12B39F8390017B66A /* HelloNewsApp.swift in Sources */,

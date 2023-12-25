@@ -11,11 +11,24 @@ struct ContentView: View {
     @State private var news = [Article]()
     var dataService = DataService()
     var body: some View {
-        List(news, id: \.title) { artic in
-            Text(artic.title ?? "NEWS")
-        }
-        .task {
-            news = await dataService.apiCall()
+        ZStack {
+            Color(Color.brown)
+                .ignoresSafeArea()
+            VStack {
+                ScrollView {
+                    ForEach(news, id: \.title) { artic in
+                        NavigationLink {
+                            SingleNewsView(article: artic)
+                        } label: {
+                            NewsCard(artic: artic)
+                        }
+                    }
+                    .task {
+                        news = await dataService.apiCall()
+                    }
+                    .navigationTitle("Hello News")
+                }
+            }
         }
     }
 }
