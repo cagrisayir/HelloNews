@@ -8,9 +8,9 @@
 import Foundation
 
 struct DataService {
-    func apiCall() async -> [Article] {
+    func apiCall(country: String) async -> [Article] {
         // 1. URL
-        if let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=ca4f7514ad3048bebfb2ef9f682752b0") {
+        if let url = URL(string: "https://newsapi.org/v2/top-headlines?country=\(country)&apiKey=ca4f7514ad3048bebfb2ef9f682752b0") {
             // 2. URLRequest
             let request = URLRequest(url: url)
 

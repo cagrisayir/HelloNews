@@ -26,7 +26,7 @@ struct NewsCard: View {
                 VStack(alignment: .leading) {
                     Text(artic.title ?? "No News title")
                         .lineLimit(4)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.black)
                         .multilineTextAlignment(.leading)
                         .bold()
 

@@ -9,12 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var news = [Article]()
+    enum Countries: String, CaseIterable, Identifiable {
+        case tr, us
+        var id: Self { self }
+    }
+
+    @State private var selectedCountry: Countries = .tr
     var dataService = DataService()
     var body: some View {
         ZStack {
             Color(Color.brown)
                 .ignoresSafeArea()
             VStack {
+                Picker("Select Country", selection: $selectedCountry) {
+                    Text("Turkiye").tag(Countries.tr)
+                    Text("USA").tag(Countries.us)
+                }
+                .pickerStyle(.segmented)
                 ScrollView {
                     ForEach(news, id: \.title) { artic in
                         NavigationLink {
@@ -24,7 +35,7 @@ struct ContentView: View {
                         }
                     }
                     .task {
-                        news = await dataService.apiCall()
+                        news = await dataService.apiCall(country: selectedCountry == .tr ? "tr" : "us")
                     }
                     .navigationTitle("Hello News")
                 }
