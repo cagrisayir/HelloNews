@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Response {
+    var status: String
+    var totalResult: Int
+    var articles: [Article]
+}
