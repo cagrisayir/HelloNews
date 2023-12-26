@@ -11,13 +11,20 @@ struct SingleNewsView: View {
     var article = Article()
     var body: some View {
         VStack(alignment: .leading) {
-            AsyncImage(url: URL(string: article.urlToImage ?? "No-image")) { image in
-                image
+            if article.urlToImage == nil {
+                Image("news_placeholder")
                     .resizable()
                     .frame(height: 300)
                     .cornerRadius(15)
-            } placeholder: {
-                Image(systemName: "network")
+            } else {
+                AsyncImage(url: URL(string: article.urlToImage!)) { image in
+                    image
+                        .resizable()
+                        .frame(height: 300)
+                        .cornerRadius(15)
+                } placeholder: {
+                    Image(systemName: "network")
+                }
             }
             ScrollView {
                 VStack {

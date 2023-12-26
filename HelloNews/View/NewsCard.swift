@@ -13,16 +13,22 @@ struct NewsCard: View {
         ZStack {
             Color(Color.white)
             VStack(alignment: .leading, spacing: 0) {
-                AsyncImage(url: URL(string: artic.urlToImage ?? "No-image")) { image in
-                    image
+                if artic.urlToImage == nil {
+                    Image("news_placeholder")
                         .resizable()
-                        .scaledToFill()
+                        .scaledToFit()
 
-                } placeholder: {
-                    Image(systemName: "network")
-                        .imageScale(.large)
+                } else {
+                    AsyncImage(url: URL(string: artic.urlToImage!)) { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+
+                    } placeholder: {
+                        Image(systemName: "globe")
+                    }
+                    .padding(.bottom, 5)
                 }
-                .padding(.bottom, 5)
                 VStack(alignment: .leading) {
                     Text(artic.title ?? "No News title")
                         .lineLimit(4)

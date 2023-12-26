@@ -14,7 +14,7 @@ struct ContentView: View {
         var id: Self { self }
     }
 
-    @State private var selectedCountry: Countries = .tr
+    @State private var selectedCountry: Countries = .us
     var dataService = DataService()
     var body: some View {
         ZStack {
