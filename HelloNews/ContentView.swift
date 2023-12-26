@@ -26,6 +26,11 @@ struct ContentView: View {
                     Text("USA").tag(Countries.us)
                 }
                 .pickerStyle(.segmented)
+                .onChange(of: selectedCountry) {
+                    Task {
+                        news = await dataService.apiCall(country: selectedCountry.rawValue)
+                    }
+                }
                 ScrollView {
                     ForEach(news, id: \.title) { artic in
                         NavigationLink {
