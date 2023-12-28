@@ -18,7 +18,7 @@ struct ContentView: View {
     var dataService = DataService()
     var body: some View {
         ZStack {
-            Color(Color.brown)
+            LinearGradient(colors: [Color(red: 13/255, green: 27/266, blue: 42/266), Color(red: 119/255, green: 141/255, blue: 169/255)], startPoint: .bottomTrailing, endPoint: .topLeading)
                 .ignoresSafeArea()
             VStack {
                 Picker("Select Country", selection: $selectedCountry) {

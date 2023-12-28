@@ -11,7 +11,7 @@ struct NewsCard: View {
     let artic: Article
     var body: some View {
         ZStack {
-            Color(Color.white)
+            Color(Color(red: 224 / 255, green: 225 / 255, blue: 221 / 255))
             VStack(alignment: .leading, spacing: 0) {
                 if artic.urlToImage == nil {
                     Image("news_placeholder")
