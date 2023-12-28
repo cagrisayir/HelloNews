@@ -16,7 +16,8 @@ struct NewsCard: View {
                 if artic.urlToImage == nil {
                     Image("news_placeholder")
                         .resizable()
-                        .scaledToFit()
+                        .frame(height: 200)
+                        .aspectRatio(contentMode: .fit)
 
                 } else {
                     AsyncImage(url: URL(string: artic.urlToImage!)) { image in
